@@ -10,32 +10,20 @@ if [ ! -f ../../vgios/build.sh ] ; then
     git clone https://github.com/rhcad/vgios ../../vgios
 fi
 
-iphoneos71=`xcodebuild -showsdks | grep -i iphoneos7.1`
-iphoneos70=`xcodebuild -showsdks | grep -i iphoneos7.0`
-iphoneos61=`xcodebuild -showsdks | grep -i iphoneos6.1`
-iphoneos51=`xcodebuild -showsdks | grep -i iphoneos5.1`
-iphoneos43=`xcodebuild -showsdks | grep -i iphoneos4.3`
-
-if [ -n "$iphoneos71" ]; then
-    xcodebuild -project TouchVGPlay/TouchVGPlay.xcodeproj $1 $2 -sdk iphoneos7.1 -configuration Release -alltargets
-else
-if [ -n "$iphoneos70" ]; then
-    xcodebuild -project TouchVGPlay/TouchVGPlay.xcodeproj $1 $2 -sdk iphoneos7.0 -configuration Release -alltargets
-else
-if [ -n "$iphoneos61" ]; then
-    xcodebuild -project TouchVGPlay/TouchVGPlay.xcodeproj $1 $2 -sdk iphoneos6.1 -configuration Release -alltargets -arch armv7
-else
-if [ -n "$iphoneos51" ]; then
-    xcodebuild -project TouchVGPlay/TouchVGPlay.xcodeproj $1 $2 -sdk iphoneos5.1 -configuration Release -alltargets
-else
-if [ -n "$iphoneos43" ]; then
-    xcodebuild -project TouchVGPlay/TouchVGPlay.xcodeproj $1 $2 -sdk iphoneos4.3 -configuration Release -alltargets
-fi
-fi
-fi
-fi
-fi
+xcodebuild -project TouchVGPlay/TouchVGPlay.xcodeproj $1 $2 -configuration Release -alltargets
 
 mkdir -p output/TouchVGPlay
 cp -R TouchVGPlay/build/Release-universal/*.a output
 cp -R TouchVGPlay/build/Release-universal/include/TouchVGPlay/*.h output/TouchVGPlay
+
+if [ ! -f output/libTouchVG.a ] ; then
+    cd ../../vgios
+    sh build.sh $1 $2
+    cd ../vgplay/ios
+fi
+
+mkdir -p output/TouchVG
+mkdir -p output/TouchVGCore
+cp -R ../../vgios/output/*.a output
+cp -R ../../vgios/output/TouchVGCore/*.h output/TouchVG
+cp -R ../../vgcore/ios/output/TouchVGCore/*.h output/TouchVGCore
