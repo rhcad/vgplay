@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:../../vgios/TouchVG.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../../vgcore/ios/TouchVGCore/TouchVGCore.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:TouchVGPlay/TouchVGPlay.xcodeproj">
+   </FileRef>
+</Workspace>

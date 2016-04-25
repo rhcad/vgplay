@@ -1,0 +1,145 @@
+rhcad.vgplay.PlayingHelper -> rhcad.vgplay.PlayingHelper:
+    rhcad.touchvg.view.BaseGraphView mView -> a
+    rhcad.vgplay.internal.Playings mInternal -> b
+    int JARVERSION -> JARVERSION
+    int FRAMEFLAGS_DYN -> FRAMEFLAGS_DYN
+    60:60:java.lang.String getVersion() -> getVersion
+    65:66:void setOnPlayEndedListener(rhcad.vgplay.PlayingHelper$OnPlayEndedListener) -> setOnPlayEndedListener
+    70:72:void stop() -> stop
+    76:76:boolean startPlay(java.lang.String) -> startPlay
+    81:82:void stopPlay() -> stopPlay
+    86:86:boolean playPause() -> playPause
+    91:91:boolean playResume() -> playResume
+    96:97:int getPlayTicks() -> getPlayTicks
+    102:102:boolean startSyncPlay(int,java.lang.String) -> startSyncPlay
+    107:108:void applySyncPlayFrame(int,int) -> applySyncPlayFrame
+    112:113:void stopSyncPlay(int) -> stopSyncPlay
+    117:118:void stopSyncPlayings() -> stopSyncPlayings
+    122:122:boolean addPlayProvider(rhcad.vgplay.PlayingHelper$PlayProvider,int,java.lang.Object) -> addPlayProvider
+    127:127:int getPlayProviderCount() -> getPlayProviderCount
+    132:133:void stopProviders() -> stopProviders
+rhcad.vgplay.PlayingHelper$OnPlayEndedListener -> rhcad.vgplay.PlayingHelper$OnPlayEndedListener:
+    boolean onPlayWillEnd(rhcad.touchvg.IGraphView) -> onPlayWillEnd
+    void onPlayEnded(rhcad.touchvg.IGraphView,int,java.lang.Object) -> onPlayEnded
+rhcad.vgplay.PlayingHelper$PlayProvider -> rhcad.vgplay.PlayingHelper$PlayProvider:
+    int provideFrame(rhcad.touchvg.IGraphView,int,java.lang.Object,int,int,int) -> provideFrame
+    void onPlayEnded(rhcad.touchvg.IGraphView,int,java.lang.Object) -> onPlayEnded
+rhcad.vgplay.core.GiCorePlay -> rhcad.vgplay.core.GiCorePlay:
+    long swigCPtr -> a
+    boolean swigCMemOwn -> b
+    25:26:void finalize() -> finalize
+    29:36:void delete() -> c
+    43:43:int getVersion() -> a
+    47:47:int loadFirstFrame() -> b
+    51:51:int loadFirstFrame(java.lang.String) -> a
+    63:64:void applyFrame(int) -> a
+    67:68:void applyFrame(int,int,int) -> a
+    71:71:boolean loadFrameIndex(java.lang.String,rhcad.vgplay.core.Ints) -> a
+    75:75:int loadNextFrame(rhcad.vgplay.core.Ints,int) -> a
+    83:83:boolean frameNeedWait(int) -> b
+rhcad.vgplay.core.Ints -> rhcad.vgplay.core.Ints:
+    long swigCPtr -> a
+    boolean swigCMemOwn -> b
+    21:21:long getCPtr(rhcad.vgplay.core.Ints) -> a
+    25:26:void finalize() -> finalize
+    29:36:void delete() -> a
+rhcad.vgplay.core.vgplay -> rhcad.vgplay.core.vgplay:
+rhcad.vgplay.core.vgplayJNI -> rhcad.vgplay.core.vgplayJNI:
+    void delete_Ints(long) -> delete_Ints
+    long new_Ints__SWIG_1() -> new_Ints__SWIG_1
+    int GiCorePlay_DOC_CHANGED_get() -> GiCorePlay_DOC_CHANGED_get
+    int GiCorePlay_SHAPE_APPEND_get() -> GiCorePlay_SHAPE_APPEND_get
+    int GiCorePlay_DYN_CHANGED_get() -> GiCorePlay_DYN_CHANGED_get
+    long new_GiCorePlay(int) -> new_GiCorePlay
+    void delete_GiCorePlay(long) -> delete_GiCorePlay
+    int GiCorePlay_getVersion() -> GiCorePlay_getVersion
+    int GiCorePlay_loadFirstFrame__SWIG_0(long,rhcad.vgplay.core.GiCorePlay) -> GiCorePlay_loadFirstFrame__SWIG_0
+    int GiCorePlay_loadFirstFrame__SWIG_1(long,rhcad.vgplay.core.GiCorePlay,java.lang.String) -> GiCorePlay_loadFirstFrame__SWIG_1
+    void GiCorePlay_applyFrame__SWIG_0(long,rhcad.vgplay.core.GiCorePlay,int) -> GiCorePlay_applyFrame__SWIG_0
+    void GiCorePlay_applyFrame__SWIG_1(int,int,int) -> GiCorePlay_applyFrame__SWIG_1
+    boolean GiCorePlay_loadFrameIndex(java.lang.String,long,rhcad.vgplay.core.Ints) -> GiCorePlay_loadFrameIndex
+    int GiCorePlay_loadNextFrame__SWIG_1(long,rhcad.vgplay.core.GiCorePlay,long,rhcad.vgplay.core.Ints,int) -> GiCorePlay_loadNextFrame__SWIG_1
+    boolean GiCorePlay_frameNeedWait(long,rhcad.vgplay.core.GiCorePlay,int) -> GiCorePlay_frameNeedWait
+rhcad.vgplay.internal.PlayRunnable -> rhcad.vgplay.internal.PlayRunnable:
+    rhcad.vgplay.internal.Playings mInternal -> a
+    rhcad.vgplay.core.GiCorePlay mPlay -> b
+    rhcad.vgplay.core.Ints mFrameIndex -> c
+    int mFlags -> d
+    27:29:boolean loadFrameIndex() -> a
+    33:38:boolean loadFirstFrame(java.lang.String) -> a
+    43:51:boolean beforeStopped() -> beforeStopped
+    56:65:void afterStopped(boolean) -> afterStopped
+    69:91:void process(int,int,int,int) -> process
+    94:108:void applyFrame$13462e() -> b
+rhcad.vgplay.internal.Playings -> rhcad.vgplay.internal.a:
+    rhcad.touchvg.view.internal.BaseViewAdapter mViewAdapter -> a
+    java.util.ArrayList playEndedListeners -> b
+    java.util.ArrayList providers -> c
+    java.util.ArrayList syncPlayings -> d
+    rhcad.vgplay.internal.PlayRunnable mPlayer -> e
+    boolean onPlayRet -> f
+    65:65:rhcad.touchvg.core.GiCoreView coreView() -> a
+    69:69:rhcad.touchvg.view.BaseGraphView getGraphView() -> b
+    73:77:void setOnPlayEndedListener(rhcad.vgplay.PlayingHelper$OnPlayEndedListener) -> a
+    88:118:boolean startPlay(java.lang.String) -> a
+    122:127:void stopPlay() -> c
+    130:137:rhcad.vgplay.internal.SyncPlayRunnable findSyncPlaying(int) -> b
+    141:153:boolean startSyncPlay(int,java.lang.String) -> a
+    157:161:void applySyncPlayFrame(int,int) -> a
+    164:170:void stopSyncPlay(int) -> a
+    173:181:void stopSyncPlayings() -> d
+    184:190:boolean onStopped(java.lang.Runnable) -> a
+    195:220:boolean onPlayWillEnd() -> e
+    224:236:void onPlayEnded() -> f
+    239:244:boolean addPlayProvider(rhcad.vgplay.PlayingHelper$PlayProvider,int,java.lang.Object) -> a
+    248:251:int getPlayProviderCount() -> g
+    257:258:void stopProviders() -> h
+    22:22:rhcad.vgplay.internal.PlayRunnable access$0(rhcad.vgplay.internal.Playings) -> a
+    22:22:void access$1(rhcad.vgplay.internal.Playings,rhcad.vgplay.internal.PlayRunnable) -> a
+    20:20:java.util.ArrayList access$2(rhcad.vgplay.internal.Playings) -> b
+    18:18:rhcad.touchvg.view.internal.BaseViewAdapter access$3(rhcad.vgplay.internal.Playings) -> c
+    19:19:java.util.ArrayList access$4(rhcad.vgplay.internal.Playings) -> d
+    193:193:boolean access$5(rhcad.vgplay.internal.Playings) -> e
+    193:193:void access$6(rhcad.vgplay.internal.Playings,boolean) -> a
+rhcad.vgplay.internal.Playings$1 -> rhcad.vgplay.internal.a$1:
+    rhcad.vgplay.internal.Playings this$0 -> a
+    30:46:void onRestorePlayingState(android.os.Bundle) -> onRestorePlayingState
+    51:51:void onShapeDeleted(int) -> onShapeDeleted
+    55:57:void onStopped() -> onStopped
+rhcad.vgplay.internal.Playings$2 -> rhcad.vgplay.internal.a$2:
+    rhcad.vgplay.internal.Playings this$0 -> a
+    201:205:void run() -> run
+rhcad.vgplay.internal.Playings$3 -> rhcad.vgplay.internal.a$3:
+    rhcad.vgplay.internal.Playings this$0 -> a
+    227:234:void run() -> run
+rhcad.vgplay.internal.ProviderRunnable -> rhcad.vgplay.internal.b:
+    rhcad.touchvg.core.GiPlaying mPlaying -> a
+    java.util.List mProviders -> b
+    rhcad.vgplay.PlayingHelper$PlayProvider mProvider -> c
+    java.lang.Object mExtra -> d
+    rhcad.touchvg.view.BaseGraphView mView -> e
+    int mStartTick -> f
+    int mLastTick -> g
+    39:40:void finalize() -> finalize
+    43:50:void stopAll(java.util.List) -> a
+    75:102:void run() -> run
+    108:115:void cleanup() -> a
+    20:20:rhcad.vgplay.PlayingHelper$PlayProvider access$0(rhcad.vgplay.internal.ProviderRunnable) -> a
+    22:22:rhcad.touchvg.view.BaseGraphView access$1(rhcad.vgplay.internal.ProviderRunnable) -> b
+    18:18:rhcad.touchvg.core.GiPlaying access$2(rhcad.vgplay.internal.ProviderRunnable) -> c
+    21:21:java.lang.Object access$3(rhcad.vgplay.internal.ProviderRunnable) -> d
+    107:107:void access$4(rhcad.vgplay.internal.ProviderRunnable) -> e
+rhcad.vgplay.internal.ProviderRunnable$1 -> rhcad.vgplay.internal.b$1:
+    rhcad.vgplay.internal.ProviderRunnable this$0 -> a
+    rhcad.touchvg.view.internal.BaseViewAdapter val$adapter -> b
+    91:97:void run() -> run
+rhcad.vgplay.internal.SyncPlayRunnable -> rhcad.vgplay.internal.SyncPlayRunnable:
+    rhcad.vgplay.internal.Playings mInternal -> a
+    rhcad.touchvg.core.GiPlayShapes mPlay -> b
+    rhcad.touchvg.core.GiPlaying mPlaying -> c
+    rhcad.touchvg.core.GiCoreViewData mCoreData -> d
+    int PLAY_LIMITMS -> e
+    36:36:int getTag() -> a
+    41:52:boolean beforeStopped() -> beforeStopped
+    57:61:void afterStopped(boolean) -> afterStopped
+    65:76:void process(int,int,int,int) -> process
