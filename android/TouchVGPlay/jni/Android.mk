@@ -5,7 +5,7 @@ cflags     := -frtti -Wall -Wextra -Wno-unused-parameter
 
 core_path  := $(call my-dir)/../../../../vgcore
 core_inc   := $(core_path)/core/include
-core_lib   := $(core_path)/android/TouchVGCore/obj/local/$(APP_ABI)
+core_lib   := $(core_path)/android/TouchVGCore/obj/local/$(TARGET_ARCH_ABI)
 
 core_incs  := $(core_inc) \
               $(core_inc)/canvas \
